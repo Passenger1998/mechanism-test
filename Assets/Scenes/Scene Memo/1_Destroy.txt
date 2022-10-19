@@ -1,0 +1,11 @@
+1_Destroy
+
+Allow player to destroy object tagged with "Destroyable Obstacle" and be destroyed by "Hazard".
+
+<Destroy>
+- the object can only be destroyed by bullet, otherwise player cannot pass
+- when hit by bullet, target object can be moved and be destroyed after a time delay
+
+<Being Destroyed>
+- the player can be destroyed when passing through hazard object
+- when passing through hazard, palyer changes colour and will then be destroyed after a time delay

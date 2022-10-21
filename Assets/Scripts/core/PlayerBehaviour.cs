@@ -23,11 +23,19 @@ public class PlayerBehaviour : MonoBehaviour
 
     }
 
-       void OnTriggerEnter(Collider bullet_disappear)
+    //bullet effect
+    void OnTriggerEnter(Collider bullet_hit)
     {
-        if (bullet_disappear.CompareTag("Environment"))
+        if (bullet_hit.CompareTag("Environment"))
         {
             Destroy (bullet);
+        }
+
+        if (bullet_hit.CompareTag ("Enemy"))
+        {
+            bullet_hit.gameObject.GetComponent<Renderer> ().material.color = Color.green;
+            Destroy (bullet_hit.gameObject, 2f);
+
         }
     }
 

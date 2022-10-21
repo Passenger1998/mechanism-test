@@ -1,0 +1,7 @@
+bm_core_c0
+
+<NavMesh Components>
+- allow the enemy to walk on wall
+
+<enemyAI script>
+- allow the enemy to search for palyer and chase and attack

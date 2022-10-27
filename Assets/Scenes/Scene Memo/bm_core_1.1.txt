@@ -1,0 +1,7 @@
+bm_core_c0
+
+<Prefab>
+- enemy is now used from prefab
+
+<enemyAI script>
+- allow the enemy to search for palyer and chase and attack

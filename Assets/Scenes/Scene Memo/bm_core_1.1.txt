@@ -1,7 +1,7 @@
-bm_core_c0
+bm_core_1.1
 
 <Prefab>
 - enemy is now used from prefab
 
-<enemyAI script>
-- allow the enemy to search for palyer and chase and attack
+<Map>
+- standarised into standard square look (NavMesh rebaked)

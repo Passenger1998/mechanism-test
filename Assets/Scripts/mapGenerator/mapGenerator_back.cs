@@ -4,37 +4,36 @@ using UnityEngine;
 
 public class mapGenerator_back : MonoBehaviour
 {
-    // GameObject outcomeMap;
+    GameObject outcomeMap;
+    int index;
 
-    // void pickRandomMap()
-    // {
-    //     index = Random.Range (0, mapList.Length)
-    //     outcomeMap = mapList[index];
-    // }
+    void pickRandomMap()
+    {
+        index = Random.Range(0, mapList.Length);
+        outcomeMap = mapList[index];
+    }
 
-    // void addMapp()
-    // {
-    //     transform thisLocation = transform.position;
-    // }
+    void addMapp()
+    {
+        transform thisLocation = transform.position;
+    }
 
-    // void onCollisionEnger(Collision col)
-    // {  
-    //     if (col.gameObject.tag == "Player")
-    //     {
-    //         add map
+    void onCollisionEnger(Collision col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+           
 
-    //     }
-    // }
+         }
+    }
 
-    // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
+     void Start()
+    {
 
-    // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+    }
+
+     void Update()
+    {
+
+    }
 }

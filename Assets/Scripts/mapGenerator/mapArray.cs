@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class mapArray : MonoBehaviour
 {
-    
     public GameObject [] mapList;
 
 }

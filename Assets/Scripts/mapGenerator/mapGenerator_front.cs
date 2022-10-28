@@ -4,11 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mapGenerator_back : MonoBehaviour
+public class mapGenerator_front : MonoBehaviour
 {
     GameObject outcomeMap;
     int index;
-    public Transform mapLoadPos_back;
+    public Transform mapLoadPos_front;
     bool mapLoadDetect;
     mapArray mapArrayRef;
     
@@ -27,7 +27,7 @@ public class mapGenerator_back : MonoBehaviour
         index = UnityEngine.Random.Range(0, mapArrayRef.mapList.Length);
         outcomeMap = mapArrayRef.mapList[index];
 
-        GameObject mapGenerated = Instantiate(outcomeMap, mapLoadPos_back.position, Quaternion.identity);
+        GameObject mapGenerated = Instantiate(outcomeMap, mapLoadPos_front.position, Quaternion.identity);
     }
 
     void onTriggerEnter(Collider col)
@@ -43,21 +43,10 @@ public class mapGenerator_back : MonoBehaviour
 
         }
     }
-
-    void onTriggerStay(Collider col)
+    void OnTriggerExit(Collider other)
     {
-        if (col.CompareTag("Player") && mapLoadDetect == false)
-        {
-
-            generateMap();
-
-            mapLoadDetect = true;
-
-            return;
-
-        }
+        //destroy map
     }
-
     /// <summary>
     /// 
     /// </summary>

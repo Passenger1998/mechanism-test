@@ -5,3 +5,5 @@ bm_core_1.1
 
 <Map>
 - standarised into standard square look (NavMesh rebaked)
+
+> endless continuous map spawn does not work. wait for next attempt<

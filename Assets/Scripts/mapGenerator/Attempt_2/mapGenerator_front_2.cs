@@ -28,12 +28,13 @@ public class mapGenerator_front_2 : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag ("Player") && !mapGenDetect)
+        if (col.CompareTag("Player") && !mapGenDetect)
         {
             mapGenDetect = true;
             generateMap_front();
         }
     }
+
 
     // Start is called before the first frame update
     void Start()

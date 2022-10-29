@@ -2,33 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mapGenerator_back_2 : MonoBehaviour
+public class backwardsMap : MonoBehaviour
 {
     GameObject outcome_back;
     int index_back;
     public Transform pos_back;
 
-    mapArray mapArrayRef;
+    mapManagerScript_Front mapArrayRef;
 
     bool mapGenDetect;
 
     void generateMap_back()
     {
-        index_back = UnityEngine.Random.Range(0, mapArrayRef.mapList.Length);
+        index_back = UnityEngine.Random.Range(0, mapArrayRef.mapPrefab.Length);
 
-        outcome_back = mapArrayRef.mapList[index_back];
+        outcome_back = mapArrayRef.mapPrefab[index_back];
 
         GameObject map_back = Instantiate(outcome_back, pos_back.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
     }
 
     void Awake()
     {
-        mapArrayRef = GameObject.Find("mapArrayList").GetComponent<mapArray>();
+        mapArrayRef = GameObject.Find("mapManager").GetComponent<mapManagerScript_Front>();
     }
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag ("Player") && !mapGenDetect)
+        if (col.CompareTag("Player") && !mapGenDetect)
         {
             mapGenDetect = true;
             generateMap_back();

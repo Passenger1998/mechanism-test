@@ -1,0 +1,6 @@
+mg_core_0
+
+<map generation>
+- now it is functional for two blocks from array to spawn on both side of the starting block
+- but if also enable the spawn loactions of two spawned blocks, it will go into endless loop for some unknown reasons
+- also it has been testified that only one collision box trigger for one block is not enough--there has to be two box collider for both sides of the block to differentiate direction

@@ -9,6 +9,24 @@ public class determineMapGenDirection : MonoBehaviour
 
     public GameObject backtrigger, fronttrigger;
 
+    bool isShiponMap;
+
+    void OnTriggerStay (Collider col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            isShiponMap = true;
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            isShiponMap = false;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +39,11 @@ public class determineMapGenDirection : MonoBehaviour
     {
         inputX = Input.GetAxis("Horizontal");
 
-        if (inputX < 0)
+        if (inputX < 0 && isShiponMap == true)
         {
             backtrigger.SetActive(true);
             fronttrigger.SetActive(false);
-        } else if (inputX > 0)
+        } else if (inputX > 0 && isShiponMap == true)
         {
             fronttrigger.SetActive(true);
             backtrigger.SetActive(false);

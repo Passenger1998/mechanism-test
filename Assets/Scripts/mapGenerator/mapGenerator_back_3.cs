@@ -32,6 +32,7 @@ public class mapGenerator_back_3 : MonoBehaviour
         {
             mapGenDetect = true;
             generateMap_back();
+            Debug.Log("back map is generated");
         }
     }
 

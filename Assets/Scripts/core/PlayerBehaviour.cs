@@ -23,21 +23,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     }
 
-    //bullet effect
-    void OnTriggerEnter(Collider bullet_hit)
-    {
-        if (bullet_hit.CompareTag("Environment"))
-        {
-            Destroy (bullet);
-        }
-
-        if (bullet_hit.CompareTag ("Enemy"))
-        {
-            bullet_hit.gameObject.GetComponent<Renderer> ().material.color = Color.green;
-            Destroy (bullet_hit.gameObject, 2f);
-
-        }
-    }
 
     // Start is called before the first frame update
     void Start()

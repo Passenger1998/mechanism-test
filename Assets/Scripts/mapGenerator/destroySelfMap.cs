@@ -9,7 +9,9 @@ public class destroySelfMap : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            Debug.Log("destroying this!");
             Destroy (this.gameObject);
+            
         }
     }
 }

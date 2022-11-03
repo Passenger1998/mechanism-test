@@ -23,15 +23,25 @@ public class BulletEffect : MonoBehaviour
 
         }
 
-         if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "Enemy")
         {
             col.gameObject.GetComponent<Renderer>().material.color = Color.red;
             Destroy(col.gameObject, 2f);
+            Destroy(this.gameObject);
         }
 
-        //Destroy(gameObject);
-
     }
+
+    //void OnTriggerEnger(Collision col)
+    //{
+    //    if (col.gameObject.tag == "Enemy")
+    //    {
+    //        col.gameObject.GetComponent<Renderer>().material.color = Color.red;
+    //        Destroy(col.gameObject, 2f);
+    //    }
+
+    //    //Destroy(gameObject);
+    //}
 
     // Start is called before the first frame update
     void Start()

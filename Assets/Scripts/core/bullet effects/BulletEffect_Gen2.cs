@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletEffect : MonoBehaviour
+public class BulletEffect_Gen2 : MonoBehaviour
 {
 
     void OnCollisionEnter(Collision col)
@@ -14,21 +14,26 @@ public class BulletEffect : MonoBehaviour
 
             Destroy (col.gameObject, 2f);
 
-        }
-
-         if (col.gameObject.tag == "Unbreakble Obstacle")
+        } else if (col.gameObject.tag == "Unbreakble Obstacle")
         {
 
             Destroy(gameObject);
 
-        }
-
-        if (col.gameObject.tag == "Enemy")
+        } else if (col.gameObject.tag == "Enemy")
         {
             col.gameObject.GetComponent<Renderer>().material.color = Color.red;
-            Destroy(col.gameObject, 2f);
             Destroy(this.gameObject);
+        } else
+        {
+            Destroy(this.gameObject, 5f);
         }
+
+
+
+        ///
+        /// instant kill///
+        /// 
+
 
     }
 

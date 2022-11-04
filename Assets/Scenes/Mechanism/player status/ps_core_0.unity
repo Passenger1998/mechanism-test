@@ -382,6 +382,8 @@ MonoBehaviour:
   enemy_hp: 10
   enemy_crystal: 10
   crystal: {fileID: 2939610888936043523, guid: da92b74f326103249814b11143fb058f, type: 3}
+  crystal_explode_velocity: {x: 1, y: 1, z: 1}
+  crystal_velocity: 0
 --- !u!1 &1328730631 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2502386370048807142, guid: 676534c643df812498234c44d5cf12e8, type: 3}
@@ -399,6 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba9e4246a2a51848bedf2016b51f1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy_is_dead: 0
 --- !u!1001 &1664761708
 PrefabInstance:
   m_ObjectHideFlags: 0

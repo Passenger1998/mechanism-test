@@ -8,6 +8,11 @@ public class enemyBattleSystem : MonoBehaviour
     int enemy_hp;
     int enemy_crystal;
     GameObject crystal;
+    public bool enemy_is_dead;
+
+    float crystal_velocity;
+
+    Rigidbody rb;
 
     void OnCollisionEnter(Collision col)
     {
@@ -33,6 +38,11 @@ public class enemyBattleSystem : MonoBehaviour
         enemy_crystal = battaleManagerScript.Instance.enemy_crystal;
         Debug.Log(this.gameObject + " starting crystal is " + enemy_crystal);
 
+        rb = crystal.GetComponent<Rigidbody>();
+
+        crystal_velocity = battaleManagerScript.Instance.crystal_velocity;
+        Debug.Log(this.gameObject + " set velocity to" + crystal_velocity);
+
     }
 
     // Update is called once per frame
@@ -45,11 +55,12 @@ public class enemyBattleSystem : MonoBehaviour
             
             for (int i = 0; i < enemy_crystal; i++)
             {
-                GameObject crystal_explode = Instantiate(crystal, this.gameObject.transform.position, Quaternion.identity);
-                
+                GameObject crystal_explode = Instantiate(crystal, this.gameObject.transform.position, Quaternion.Euler(UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f)));
+                crystal_explode.transform.Translate(Vector3.forward * crystal_velocity * Time.deltaTime);
+
             }
             
-            Destroy(this.gameObject, 2f);
+            Destroy(this.gameObject);
 
         }
     }

@@ -21,6 +21,13 @@ public class battaleManagerScript : MonoBehaviour
     public int enemy_crystal;
     public GameObject crystal;
 
+    /// <summary>
+    /// crystal settings
+    /// crystal settings
+    /// </summary>
+    public Vector3 crystal_explode_velocity;
+    public float crystal_velocity;
+
     private void OnEnable()
     {
         Instance = this;

@@ -2,28 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mapGenerator_back_3 : MonoBehaviour
+public class mapGenerator_front_3 : MonoBehaviour
 {
-    GameObject outcome_back;
-    int index_back;
-    public Transform pos_back;
+    GameObject outcome_front;
+    int index_front;
+    public Transform pos_front;
 
-    mapArray_2 mapArrayRef;
+    mapArray_3 mapArrayRef;
 
     bool mapGenDetect;
 
     void generateMap_back()
     {
-        index_back = UnityEngine.Random.Range(0, mapArrayRef.mapList.Length);
+        index_front = UnityEngine.Random.Range(0, mapArrayRef.mapList.Length);
 
-        outcome_back = mapArrayRef.mapList[index_back];
+        outcome_front = mapArrayRef.mapList[index_front];
 
-        GameObject map_back = Instantiate(outcome_back, pos_back.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
+        GameObject map_front = Instantiate(outcome_front, pos_front.position, Quaternion.Euler(new Vector3(-90, 0, 0)));
     }
 
     void Awake()
     {
-        mapArrayRef = GameObject.Find("mapArrayList").GetComponent<mapArray_2>();
+        mapArrayRef = GameObject.Find("mapArrayList").GetComponent<mapArray_3>();
     }
 
     void OnTriggerEnter(Collider col)
@@ -32,7 +32,7 @@ public class mapGenerator_back_3 : MonoBehaviour
         {
             mapGenDetect = true;
             generateMap_back();
-            Debug.Log("back map is generated");
+            Debug.Log("front map is generated");
         }
     }
 

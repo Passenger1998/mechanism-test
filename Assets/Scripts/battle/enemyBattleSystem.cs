@@ -72,7 +72,7 @@ public class enemyBattleSystem : MonoBehaviour
             {
                 //GameObject crystal_explode = Instantiate(crystal, this.gameObject.transform.position, Quaternion.Euler(UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f)));
                 //crystal_explode.transform.Translate(Vector3.forward * crystal_velocity * Time.deltaTime);
-
+                Instantiate(crystal);
                 Vector3 Movement = new Vector3(UnityEngine.Random.Range(-1, 1), UnityEngine.Random.Range(-1, 1), transform.position.z);
                 rb.AddForce(Movement * crystal_velocity);
             }

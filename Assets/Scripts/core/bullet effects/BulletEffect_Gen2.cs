@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,20 @@ using UnityEngine;
 public class BulletEffect_Gen2 : MonoBehaviour
 {
 
+
     void OnCollisionEnter(Collision col)
     {
+
+        IEnumerator ChangeColor()
+        {
+
+            col.gameObject.GetComponent<Renderer>().material.color = Color.red;
+
+            yield return new WaitForSeconds(2);//2 seconds for example
+
+            col.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+
+        }
 
         // do other jobs, then bullet destroys itself:
         if (col.gameObject.tag == "Destroyable Obstacle")
@@ -14,15 +27,19 @@ public class BulletEffect_Gen2 : MonoBehaviour
 
             Destroy (col.gameObject, 2f);
 
-        } else if (col.gameObject.tag == "Unbreakble Obstacle")
+        } else if (col.gameObject.tag == "Unreakble Obstacle")
         {
 
             Destroy(gameObject);
 
         } else if (col.gameObject.tag == "Enemy")
         {
-            col.gameObject.GetComponent<Renderer>().material.color = Color.red;
+
+            ChangeColor();
+
             Destroy(this.gameObject);
+
+
         } else
         {
             Destroy(this.gameObject, 5f);

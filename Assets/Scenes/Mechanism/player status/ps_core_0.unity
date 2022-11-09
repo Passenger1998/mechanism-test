@@ -402,6 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_is_dead: 0
+  duration: 0.1
 --- !u!1001 &1664761708
 PrefabInstance:
   m_ObjectHideFlags: 0

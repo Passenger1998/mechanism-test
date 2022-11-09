@@ -14,6 +14,17 @@ public class enemyBattleSystem : MonoBehaviour
 
     Rigidbody rb;
 
+    public float duration;
+
+    //to allow change shift colour back and for: hit effect fill in here
+    private IEnumerator colourShift (float duration)
+    {
+        var originalColour = this.gameObject.GetComponent<Renderer>().material.color;
+        this.gameObject.GetComponent<Renderer>().material.color = Color.red;
+        yield return new WaitForSeconds(duration);
+        this.gameObject.GetComponent<Renderer>().material.color = originalColour;
+    }
+
     void OnCollisionEnter(Collision col)
     {
 
@@ -22,6 +33,9 @@ public class enemyBattleSystem : MonoBehaviour
 
             enemy_hp = enemy_hp - 1;
             Debug.Log(this.gameObject + " hp is now " + enemy_hp);
+
+            StartCoroutine(colourShift(duration));
+
 
         }
     }

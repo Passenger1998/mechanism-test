@@ -13,7 +13,7 @@ public class enemyBattleSystem : MonoBehaviour
 
     float crystal_velocity;
 
-    Rigidbody rb;
+    //Rigidbody rb;
 
     public float duration;
 
@@ -53,7 +53,7 @@ public class enemyBattleSystem : MonoBehaviour
         enemy_crystal = battaleManagerScript.Instance.enemy_crystal;
         Debug.Log(this.gameObject + " starting crystal is " + enemy_crystal);
 
-        rb = crystal.GetComponent<Rigidbody>();
+       // rb = crystal.GetComponent<Rigidbody>();
 
         crystal_velocity = battaleManagerScript.Instance.crystal_velocity;
         Debug.Log(this.gameObject + " set velocity to" + crystal_velocity);
@@ -68,14 +68,21 @@ public class enemyBattleSystem : MonoBehaviour
             ///play die animation here, animation duration last seconds can be written below///
             Debug.Log("deleting!!! hp" + enemy_hp);
             
-            for (int i = 0; i < enemy_crystal; i++)
-            {
-                //GameObject crystal_explode = Instantiate(crystal, this.gameObject.transform.position, Quaternion.Euler(UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f)));
-                //crystal_explode.transform.Translate(Vector3.forward * crystal_velocity * Time.deltaTime);
-                Instantiate(crystal);
-                Vector3 Movement = new Vector3(UnityEngine.Random.Range(-1, 1), UnityEngine.Random.Range(-1, 1), transform.position.z);
-                rb.AddForce(Movement * crystal_velocity);
-            }
+            //for (int i = 0; i <= enemy_crystal; i++)
+            //{
+            //    //GameObject crystal_explode = Instantiate(crystal, this.gameObject.transform.position, Quaternion.Euler(UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f), UnityEngine.Random.Range(0f, 360f)));
+            //    //crystal_explode.transform.Translate(Vector3.forward * crystal_velocity * Time.deltaTime);
+
+            //    GameObject explodedCrystal = Instantiate(crystal, this.gameObject.transform.position, Quaternion.identity);
+
+            //    explodedCrystal.transform.position = Vector3.Lerp(explodedCrystal.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, 0.001f);
+
+            //    //Vector3 Movement = new Vector3(UnityEngine.Random.Range(-1, 1), UnityEngine.Random.Range(-1, 1), transform.position.z);
+                
+            //    //Rigidbody rb = explodedCrystal.GetComponent<Rigidbody>();
+
+            //    //rb.AddForce(Movement * crystal_velocity);
+            //}
             
             Destroy(this.gameObject);
 

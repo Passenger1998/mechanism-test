@@ -55,7 +55,7 @@ public class PlayerBehaviour_Gen2 : MonoBehaviour
 
         //cannon aim and shoot
 
-
+        //RotateCannon();
 
         //target = transform.Find("Main Camera").GetComponent<Camera>().ScreenToWorldPoint(new Vector3 (Input.mousePosition.x,Input.mousePosition.y, transform.position.z));
         //mouse_position.transform.position = new Vector2(target.x, target.y);
@@ -65,10 +65,12 @@ public class PlayerBehaviour_Gen2 : MonoBehaviour
 
     }
 
-    void RotateCannon()
-    {
-        
-    }
+    //void RotateCannon()
+    //{
+    //    cannonAngle += Input.GetAxis("Mouse Y") * cannonSpeed * -Time.deltaTime;
+    //    cannonAngle = Mathf.Clamp(cannonAngle, 90, 180);
+    //    cannon.localRotation = Quaternion.AngleAxis(cannonAngle, Vector3.back);
+    //}
 
     void FixedUpdate()
     {

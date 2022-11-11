@@ -16,9 +16,9 @@ public class PlayerBehaviour_Gen2 : MonoBehaviour
     
     bool shoot = false;
 
-    private Vector3 target;
-    public GameObject cannonRotateCentre;
-    public GameObject mouse_position;
+    public Transform cannon;
+    public float cannonSpeed;
+    float cannonAngle;
 
     void Awake()
     {
@@ -55,12 +55,19 @@ public class PlayerBehaviour_Gen2 : MonoBehaviour
 
         //cannon aim and shoot
 
+
+
         //target = transform.Find("Main Camera").GetComponent<Camera>().ScreenToWorldPoint(new Vector3 (Input.mousePosition.x,Input.mousePosition.y, transform.position.z));
         //mouse_position.transform.position = new Vector2(target.x, target.y);
         //cannonRotateCentre.transform.LookAt(mouse_position.transform.position);
 
         //cannonRotateCentre.transform.LookAt(Input.mousePosition);
 
+    }
+
+    void RotateCannon()
+    {
+        
     }
 
     void FixedUpdate()

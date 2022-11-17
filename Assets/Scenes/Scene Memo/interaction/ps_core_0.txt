@@ -1,0 +1,7 @@
+ps_core_0
+
+<shooter behaviour>
+- with upgraded script for player control, now you can use mouse to control the raise and fall of cannon
+
+<battle system>
+- a singleton script is added to count values and data like hp, crystal etc.

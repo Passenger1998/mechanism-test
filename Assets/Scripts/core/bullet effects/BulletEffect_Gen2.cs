@@ -74,6 +74,7 @@ public class BulletEffect_Gen2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+//set velocity to transform.foward
+//set transform.roation to point in in specified direction
     }
 }

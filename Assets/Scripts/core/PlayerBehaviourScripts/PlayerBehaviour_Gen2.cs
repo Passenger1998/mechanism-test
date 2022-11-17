@@ -16,9 +16,6 @@ public class PlayerBehaviour_Gen2 : MonoBehaviour
     
     bool shoot = false;
 
-    public Transform cannon;
-    public float cannonSpeed;
-    float cannonAngle;
 
     void Awake()
     {
@@ -42,7 +39,7 @@ public class PlayerBehaviour_Gen2 : MonoBehaviour
         inputY = Input.GetAxis ("Vertical");
 
         //shoot bullet
-        if (Input.GetKeyDown("space"))
+        if (Input.GetMouseButtonDown(0))
         {
             shoot = true;
         }
@@ -53,24 +50,7 @@ public class PlayerBehaviour_Gen2 : MonoBehaviour
             shoot = false;
         }
 
-        //cannon aim and shoot
-
-        //RotateCannon();
-
-        //target = transform.Find("Main Camera").GetComponent<Camera>().ScreenToWorldPoint(new Vector3 (Input.mousePosition.x,Input.mousePosition.y, transform.position.z));
-        //mouse_position.transform.position = new Vector2(target.x, target.y);
-        //cannonRotateCentre.transform.LookAt(mouse_position.transform.position);
-
-        //cannonRotateCentre.transform.LookAt(Input.mousePosition);
-
     }
-
-    //void RotateCannon()
-    //{
-    //    cannonAngle += Input.GetAxis("Mouse Y") * cannonSpeed * -Time.deltaTime;
-    //    cannonAngle = Mathf.Clamp(cannonAngle, 90, 180);
-    //    cannon.localRotation = Quaternion.AngleAxis(cannonAngle, Vector3.back);
-    //}
 
     void FixedUpdate()
     {
@@ -81,8 +61,9 @@ public class PlayerBehaviour_Gen2 : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletSpawn = Instantiate (bullet, bulletPos.position, Quaternion.identity);
-        bulletSpawn.GetComponent<Rigidbody> ().velocity = new Vector3 (bulletspeed, 0, 0);
+        GameObject bulletSpawn = Instantiate (bullet, bulletPos.position, Quaternion.LookRotation(bulletPos.transform.right,Vector3.up));
+        //bulletSpawn.GetComponent<Rigidbody> ().velocity = new Vector3 (bulletspeed, 0, 0);
+        bulletSpawn.GetComponent<Rigidbody>().velocity = new Vector2 (bulletPos.transform.right.x * bulletspeed, bulletPos.transform.right.y * bulletspeed);
     }
 
 }

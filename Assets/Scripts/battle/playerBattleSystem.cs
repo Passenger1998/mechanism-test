@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerBattleSystem : MonoBehaviour
 {
-    int player_hp;
+    public int player_hp;
 
     void OnCollisionEnter(Collision col)
     {
@@ -29,6 +29,7 @@ public class playerBattleSystem : MonoBehaviour
 
     void Update()
     {
+
         if (player_hp <= 0)
         {
             ///play die animation here, animation duration last seconds can be written below///

@@ -18,15 +18,17 @@ public class battaleManagerScript : MonoBehaviour
     /// enemy status varaible sat area
     /// </summary>
     public int enemy_hp;
-    public int enemy_crystal;
-    public GameObject crystal;
+    //public int enemy_crystal;
+    //public GameObject crystal;
 
     /// <summary>
     /// crystal settings
     /// crystal settings
     /// </summary>
-    public Vector3 crystal_explode_velocity;
-    public float crystal_velocity;
+    //public Vector3 crystal_explode_velocity;
+    //public float crystal_velocity;
+
+    int energy_level;
 
     private void OnEnable()
     {

@@ -13,7 +13,7 @@ public class crystalExplodeScript : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
 
-        crystal_explode_velocity = battaleManagerScript.Instance.crystal_explode_velocity;
+        //crystal_explode_velocity = battaleManagerScript.Instance.crystal_explode_velocity;
         Debug.Log(this.gameObject + " set velocity to" + crystal_explode_velocity);
 
         rb.velocity = crystal_explode_velocity;

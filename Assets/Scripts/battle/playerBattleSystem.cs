@@ -21,7 +21,7 @@ public class playerBattleSystem : MonoBehaviour
     void Start ()
     {
         player_hp = battaleManagerScript.Instance.player_hp;
-        Debug.Log("player starting hp is " + player_hp);
+        //Debug.Log("player starting hp is " + player_hp);
     }
 
 
@@ -30,10 +30,11 @@ public class playerBattleSystem : MonoBehaviour
     void Update()
     {
 
+
         if (player_hp <= 0)
         {
             ///play die animation here, animation duration last seconds can be written below///
-            Debug.Log("deleting!!! hp"+ player_hp);
+            Debug.Log("u r dying");
             Destroy(this.gameObject, 2f);
            
         }

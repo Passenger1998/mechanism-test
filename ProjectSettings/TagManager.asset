@@ -8,6 +8,8 @@ TagManager:
   - Destroyable Obstacle
   - Hazard
   - Bullet
+  - Enemy
+  - UI
   layers:
   - Default
   - TransparentFX

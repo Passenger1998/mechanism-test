@@ -11,10 +11,13 @@ public class GameUIScript : MonoBehaviour
     int health;
     public GameObject _health;
 
-    int energy_level;
+    public int energy_level;
     public GameObject _energy_level;
 
     public GameObject player;
+
+    int bullet_count;
+    public GameObject _bullet_count;
 
 
 
@@ -23,7 +26,7 @@ public class GameUIScript : MonoBehaviour
     {
         //health = battaleManagerScript.Instance.player_hp;
         health = player.gameObject.GetComponent<playerBattleSystem>().player_hp;
-        Debug.Log("UI hp is " + health);
+        //Debug.Log("UI hp is " + health);
     }
 
     // Update is called once per frame
@@ -33,6 +36,9 @@ public class GameUIScript : MonoBehaviour
         _health.gameObject.GetComponent<Text>().text = "HEALTH: " + health;
 
         _energy_level.gameObject.GetComponent<Text>().text = "ENERGY_LEVEL: " + energy_level;
+
+        bullet_count = player.gameObject.GetComponent<PlayerBehaviour_Gen2>().player_bullet;
+        _bullet_count.gameObject.GetComponent<Text>().text = "AMMO: " + bullet_count;
     }
 
     public void EnergyCollectionCount()
@@ -40,4 +46,8 @@ public class GameUIScript : MonoBehaviour
         energy_level++;
     }
 
+    public void EnergyUsedforReload()
+    {
+        energy_level--;
+    }
 }

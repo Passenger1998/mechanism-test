@@ -68,7 +68,7 @@ public class enemyBattleSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemy_hp <= 0)
+        if (enemy_hp == 0)
         {
             ///play die animation here, animation duration last seconds can be written below///
 

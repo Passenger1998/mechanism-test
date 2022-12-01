@@ -444,6 +444,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71cf02ff9a3f9e4689fcc371e16c3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  rotateSpeed: 250
   playerPos: {fileID: 139416365}
   planeView: {fileID: 459510633}
+  minPOV: 23
+  maxPOV: 53
+  zoomSpeed: 250

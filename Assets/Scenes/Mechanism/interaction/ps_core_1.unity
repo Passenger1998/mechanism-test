@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_is_dead: 0
-  duration: 0.1
+  hitColorChangeDuration: 0
 --- !u!1 &1382086570
 GameObject:
   m_ObjectHideFlags: 0
@@ -16937,7 +16937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn: {x: 0, y: 0}
-  sensitivity: 0.5
+  sensitivity: 1
 --- !u!33 &6313919549888724406
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class enemyBattleSystem : MonoBehaviour
 
     //Rigidbody rb;
 
-    public float duration;
+    public float hitColorChangeDuration;
 
     //to allow change shift colour back and for: hit effect fill in here
     private IEnumerator colourShift (float duration)
@@ -37,7 +37,7 @@ public class enemyBattleSystem : MonoBehaviour
             enemy_hp = enemy_hp - 1;
             //Debug.Log(this.gameObject + " hp is now " + enemy_hp);
 
-            StartCoroutine(colourShift(duration));
+            StartCoroutine(colourShift(hitColorChangeDuration));
 
 
         }

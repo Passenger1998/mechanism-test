@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class CameraShakeScript : MonoBehaviour
 {
-    public bool handheldMode = false;
+    public bool shake = false;
+    public bool shake_continuously = false;
     public AnimationCurve animationCurve;
     public float shakeDuration;
 
     // Start is called before the first frame update
     void Start()
     {
-     
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (handheldMode)
+        if (shake)
         {
-            handheldMode = false;
+            shake = false;
             StartCoroutine(ConstantHandHeldShake());
+        }
+
+        if (shake_continuously)
+        {
+            ContinuousShake();
         }
     }
 
@@ -39,6 +45,12 @@ public class CameraShakeScript : MonoBehaviour
 
         transform.position = startPos;
 
+    }
+
+    void ContinuousShake()
+    {
+        int i = 1;
+     
     }
 
 }

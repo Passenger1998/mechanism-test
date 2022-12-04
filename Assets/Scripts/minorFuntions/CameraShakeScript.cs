@@ -5,10 +5,11 @@ using UnityEngine;
 public class CameraShakeScript : MonoBehaviour
 {
     public bool shake = false;
-    public bool shake_continuously = false;
-    public AnimationCurve animationCurve;
-    public float shakeDuration;
-
+    public bool shake_long = false;
+    public AnimationCurve horizonCurve;
+    public AnimationCurve risingCurve;
+    public float shakeDuration = 1f;
+    public float long_shakeDuration = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,16 +22,17 @@ public class CameraShakeScript : MonoBehaviour
         if (shake)
         {
             shake = false;
-            StartCoroutine(ConstantHandHeldShake());
+            StartCoroutine(ShortShake());
         }
 
-        if (shake_continuously)
+        if (shake_long)
         {
-            ContinuousShake();
+            shake_long = false;
+            StartCoroutine(LongShake());
         }
     }
 
-    IEnumerator ConstantHandHeldShake()
+    IEnumerator ShortShake()
     {
         Vector3 startPos = transform.position;
         float elapsedTime = 0f;
@@ -38,7 +40,7 @@ public class CameraShakeScript : MonoBehaviour
         while(elapsedTime < shakeDuration)
         {
             elapsedTime += Time.deltaTime;
-            float strength = animationCurve.Evaluate(elapsedTime / shakeDuration);
+            float strength = horizonCurve.Evaluate(elapsedTime / shakeDuration);
             transform.position = startPos + UnityEngine.Random.insideUnitSphere * strength;
             yield return null;
         }
@@ -47,10 +49,20 @@ public class CameraShakeScript : MonoBehaviour
 
     }
 
-    void ContinuousShake()
+    IEnumerator LongShake()
     {
-        int i = 1;
-     
-    }
+        Vector3 startPos = transform.position;
+        float elapsedTime = 0f;
 
+        while (elapsedTime < long_shakeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float strength = risingCurve.Evaluate(elapsedTime / long_shakeDuration);
+            transform.position = startPos + UnityEngine.Random.insideUnitSphere * strength;
+            yield return null;
+        }
+
+        transform.position = startPos;
+
+    }
 }

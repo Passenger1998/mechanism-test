@@ -6,8 +6,6 @@ public class backDangerTriggerScript : MonoBehaviour
 {
     public bool hasEntered;
     public bool handheldMode;
- 
-
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +33,7 @@ public class backDangerTriggerScript : MonoBehaviour
         if (hasEntered)
         {
             handheldMode = true;
-            GameObject.Find("Main Camera").GetComponent<CameraShakeScript>().shake_continuously = true;
+            GameObject.Find("Main Camera").GetComponent<CameraShakeScript>().shake_long = true;
         }
     }
 }

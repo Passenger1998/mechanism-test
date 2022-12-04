@@ -387,11 +387,10 @@ GameObject:
   - component: {fileID: 8499439151244604937}
   - component: {fileID: 6630024385651206237}
   - component: {fileID: 7369733101611106532}
+  - component: {fileID: 8499439151244604939}
   - component: {fileID: 5154260977007991183}
-  - component: {fileID: 3136434406117481767}
-  - component: {fileID: 1251746843808579358}
   - component: {fileID: 4279465373061288377}
-  - component: {fileID: 8499439151244604938}
+  - component: {fileID: 8499439151244604940}
   m_Layer: 0
   m_Name: Rescue Capsule
   m_TagString: Player
@@ -407,35 +406,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3567834677568640627}
   m_Enabled: 1
---- !u!114 &1251746843808579358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905311124556713913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daef52ed66ef2eb409e0adf1bd26118f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 100
---- !u!114 &3136434406117481767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905311124556713913}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6621989f41d8454a9d9341f3ee99615, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  bulletspeed: 50
-  bullet: {fileID: 7720361539818848404, guid: 926e1b9e71e233d4ebd84589faf0e87f, type: 3}
-  bulletPos: {fileID: 6629944766735777966}
 --- !u!1 &3567834677568640627
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,14 +606,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shake: 0
-  shake_continuously: 0
-  animationCurve:
+  shake_long: 0
+  horizonCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  shakeDuration: 0
+  risingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.2852656
+      outSlope: 0.2852656
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.075
+    - serializedVersion: 3
+      time: 10
+      value: 2
+      inSlope: 0.18580882
+      outSlope: 0.18580882
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.0583333
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  shakeDuration: 1
+  long_shakeDuration: 10
 --- !u!4 &8499439151244604937
 Transform:
   m_ObjectHideFlags: 0
@@ -661,7 +674,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8499439151244604938
+--- !u!114 &8499439151244604939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -670,15 +683,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 905311124556713913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dc6beb0e2220ea4f9a89b5fc3334a08, type: 3}
+  m_Script: {fileID: 11500000, guid: 519fb666620675b49958e9ff3fbe804e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shake: 0
-  shake_continuously: 0
-  animationCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  shakeDuration: 0
+  speed: 100
+  bulletspeed: 0
+  bullet: {fileID: 0}
+  bulletPos: {fileID: 0}
+  player_bullet: 0
+  energy_level: 0
+--- !u!114 &8499439151244604940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905311124556713913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daef52ed66ef2eb409e0adf1bd26118f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100

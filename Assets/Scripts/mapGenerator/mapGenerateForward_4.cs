@@ -27,7 +27,7 @@ public class mapGenerateForward_4 : MonoBehaviour
 
             mapArrayOneWay.Instance.orderOfBlock ++;
 
-            Debug.Log("front block is generated and next block would be block number " + orderOfBlock);
+            //Debug.Log("front block is generated and next block would be block number " + orderOfBlock);
 
         }
     }

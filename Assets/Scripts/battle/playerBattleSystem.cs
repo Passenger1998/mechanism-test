@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerBattleSystem : MonoBehaviour
 {
     public int player_hp;
+    public int max_hp;
 
     void OnCollisionEnter(Collision col)
     {
@@ -21,6 +22,7 @@ public class playerBattleSystem : MonoBehaviour
     void Start ()
     {
         player_hp = battaleManagerScript.Instance.player_hp;
+        max_hp = battaleManagerScript.Instance.player_hp;
         //Debug.Log("player starting hp is " + player_hp);
     }
 

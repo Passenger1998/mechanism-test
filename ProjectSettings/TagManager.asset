@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - Enemy
   - UI
+  - Energy
   layers:
   - Default
   - TransparentFX

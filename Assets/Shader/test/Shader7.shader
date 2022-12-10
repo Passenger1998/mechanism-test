@@ -19,19 +19,25 @@ Shader "Unlit/Shader1"
     }
         SubShader
     {
-        Tags { "RenderType" = "Transparent"// tag to inform unity pipeline what type this is
+        Tags { "RenderType" = "Transparent"
                "Queue" = "Transparent"
+        
+        
+             }
+
+              // tag to inform unity pipeline what type this is
+               
                 // render order; skybox - opaque - transparent - overlay
         
    
         
-        } // it has different tags, opaque means geomatry; 
+         // it has different tags, opaque means geomatry; 
         LOD 100
 
         Pass
         { //hlsl coding language 
             //ZWrite Off
-            cull off
+            //cull off
             Blend One One
             CGPROGRAM
             #pragma vertex vert   // this is the vertex shader, which call the function of vert 

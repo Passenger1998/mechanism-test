@@ -103,7 +103,9 @@ Shader "Unlit/Light"
                     //(1-dot(V, N))        // use dot(V, N) to add fresnal, 
                 
 
-                return float4(specularlight1 + diffuseLight * _Color +fresnal, 1);
+                return float4(specularlight1 + diffuseLight * _Color, 1);
+
+                //+fresnal
                  
 
 

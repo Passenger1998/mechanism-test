@@ -35,7 +35,7 @@ Material:
     - _WaveAmp1: 1
     - _WaveAmp2: 1
     m_Colors:
-    - _Color: {r: 0.7924528, g: 0.027411798, b: 0.24930832, a: 0.45882353}
+    - _Color: {r: 1, g: 1, b: 1, a: 0.45882353}
     - _ColorA: {r: 1, g: 1, b: 1, a: 1}
     - _ColorB: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

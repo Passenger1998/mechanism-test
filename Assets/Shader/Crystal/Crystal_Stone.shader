@@ -73,9 +73,9 @@ Shader "Unlit/Crystal_Stone"
             {
                 // sample the texture
                 //float4 col = tex2D(_MainTex, i.uv);
-                float3 gradient = lerp(_ColorA, _ColorB, i.uv.y);
+                float3 gradient = lerp(_ColorA, _ColorB, i.normal);
                 
-                float3 colorLerpStation = lerp(_ColorStart, _ColorEnd, i.uv.y);
+                float colorLerpStation = lerp(_ColorStart, _ColorEnd, i.normal);
                 //fresnal
                 float3 N = normalize(i.normal);
                 float3 V = normalize(_WorldSpaceCameraPos - i.WorldPos);
@@ -88,7 +88,7 @@ Shader "Unlit/Crystal_Stone"
 
 
                 
-                return float4 (fresnal,1) + float4(gradient,1);
+                return float4 (fresnal,1) + float4(gradient,1) + float4(1,1,1,1)* colorLerpStation;
             }
             ENDCG
         }

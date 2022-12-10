@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Crystal_Stone
-  m_Shader: {fileID: 4800000, guid: dd25e96bec6424045be962bdf2611f17, type: 3}
+  m_Shader: {fileID: 4800000, guid: 662224e8262a15845a317530242517a4, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -26,9 +26,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorEnd: 0
-    - _ColorStart: 1
+    - _ColorEnd: 0.464
+    - _ColorStart: 0.525
     m_Colors:
-    - _ColorA: {r: 0.9150943, g: 0.12215183, b: 0, a: 1}
-    - _ColorB: {r: 0.9622642, g: 0.4031082, b: 0.14978641, a: 1}
+    - _ColorA: {r: 0.46226418, g: 0.29073218, b: 0.29073218, a: 1}
+    - _ColorB: {r: 0.8584906, g: 0.28886315, b: 0.28886315, a: 1}
   m_BuildTextureStacks: []

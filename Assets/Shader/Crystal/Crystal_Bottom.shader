@@ -38,7 +38,7 @@ Shader "Unlit/Crystal_Bottom"
 
             struct meshdata
             {
-            float4 vertex : POSITION;
+                float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
             };
 

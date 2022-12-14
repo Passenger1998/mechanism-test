@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MainTexture
-  m_Shader: {fileID: 4800000, guid: d78e19296b654b84299b1b6521cc2588, type: 3}
+  m_Name: Shader6 1
+  m_Shader: {fileID: 4800000, guid: 87fa48f8a31347440a3b0f58c1099922, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -24,18 +24,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SpaceShipAlbedo:
-        m_Texture: {fileID: 2800000, guid: fc86e4f479898784695f2ff72dff2897, type: 3}
-        m_Scale: {x: 5, y: 5}
-        m_Offset: {x: 0, y: 0}
-    - _SpaceShipNormals:
-        m_Texture: {fileID: 2800000, guid: 1e2d6acbed1db8c4a99a289ced0a1411, type: 3}
-        m_Scale: {x: 5, y: 5}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Gloss: 0.125
-    - _Gloss1: 0.478
+    - _ColorEnd: 0.475
+    - _ColorStart: 0.688
+    - _Offset: -0.45
+    - _Scale: 1.26
+    - _Value: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorA: {r: 0.04435144, g: 0.24096067, b: 0.6132076, a: 1}
+    - _ColorB: {r: 1, g: 0, b: 0.47598267, a: 1}
   m_BuildTextureStacks: []

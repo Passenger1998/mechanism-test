@@ -36,7 +36,7 @@ public class playerBattleSystem : MonoBehaviour
         if (player_hp <= 0)
         {
             ///play die animation here, animation duration last seconds can be written below///
-            Debug.Log("u r dying");
+            //Debug.Log("u r dying");
             Destroy(this.gameObject, 2f);
            
         }

@@ -35,14 +35,14 @@ public class BulletEffect_Gen2 : MonoBehaviour
         } else if (col.gameObject.tag == "Enemy")
         {
 
-            ChangeColor();
+            //ChangeColor();
 
-            Destroy(this.gameObject);
+            Destroy(gameObject);
 
 
         } else
         {
-            Destroy(this.gameObject, 5f);
+            Destroy(gameObject, 3f);
         }
 
 

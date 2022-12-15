@@ -28,14 +28,14 @@ public class enemyBattleSystem : MonoBehaviour
         this.gameObject.GetComponent<Renderer>().material.color = originalColour;
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
 
         if (col.gameObject.tag == "Bullet")
         {
 
             enemy_hp = enemy_hp - 1;
-            //Debug.Log(this.gameObject + " hp is now " + enemy_hp);
+            Debug.Log(this.gameObject + " hp is now " + enemy_hp);
 
             StartCoroutine(colourShift(hitColorChangeDuration));
 

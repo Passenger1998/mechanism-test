@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Game Construction Site/Main Menu.unity
+    guid: 793ec40b83e8af44fbc4a295439b7605
+  - enabled: 1
+    path: Assets/Scenes/Game Construction Site/BeforePlay CutScene.unity
+    guid: be4136b5212ac794d8a51bc6906b0843
+  - enabled: 1
+    path: Assets/Scenes/Game Construction Site/Learning Level.unity
+    guid: 6eadc5fce4fe9c044ae1939a0665895b
+  - enabled: 1
+    path: Assets/Scenes/Game Construction Site/Level333.unity
+    guid: 86e7dca4f89e58549be9425ec1ac84b8
   m_configObjects: {}

@@ -6,7 +6,7 @@ public class playerBattleSystem : MonoBehaviour
 {
     public int player_hp;
     public int max_hp;
-
+    //public int* var;
     void OnCollisionEnter(Collision col)
     {
 
@@ -31,8 +31,7 @@ public class playerBattleSystem : MonoBehaviour
 
     void Update()
     {
-
-
+    
         if (player_hp <= 0)
         {
             ///play die animation here, animation duration last seconds can be written below///

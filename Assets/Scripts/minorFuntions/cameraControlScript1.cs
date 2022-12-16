@@ -28,9 +28,6 @@ public class cameraControlScript1 : MonoBehaviour
 
     void Update()
     {
-
-        Camera.main.fieldOfView = manipulatePOV;
-
         //while (Input.GetKey("f") && !shift_ && manipulatePOV > minPOV)
         //{
         //    manipulatePOV -= zoomInSpeed * Time.deltaTime;
@@ -44,6 +41,8 @@ public class cameraControlScript1 : MonoBehaviour
 
         if (Input.GetKey("f") && !shift)
         {
+            Camera.main.fieldOfView = manipulatePOV;
+
             Quaternion rotTarget = Quaternion.LookRotation(playerPos.position - this.transform.position);
             this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, rotTarget, rotateInSpeed * Time.deltaTime);
         

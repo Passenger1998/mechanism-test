@@ -10,16 +10,16 @@ public class BulletEffect_Gen3 : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
 
-        IEnumerator ChangeColor()
-        {
+        //IEnumerator ChangeColor()
+        //{
 
-            col.gameObject.GetComponent<Renderer>().material.color = Color.red;
+        //    col.gameObject.GetComponent<Renderer>().material.color = Color.red;
 
-            yield return new WaitForSeconds(2);//2 seconds for example
+        //    yield return new WaitForSeconds(2);//2 seconds for example
 
-            col.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        //    col.gameObject.GetComponent<Renderer>().material.color = Color.blue;
 
-        }
+        //}
 
         // do other jobs, then bullet destroys itself:
         if (col.gameObject.tag == "Destroyable Obstacle")

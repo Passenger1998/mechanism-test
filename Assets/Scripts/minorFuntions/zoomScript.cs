@@ -21,10 +21,11 @@ public class zoomScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Camera.main.fieldOfView = manipulatePOV;
+       
 
         if (Input.GetKey("f") && !shift && manipulatePOV > minPOV)
         {
+            Camera.main.fieldOfView = manipulatePOV;
             manipulatePOV -= zoomSpeed * Time.deltaTime;
             
             if (manipulatePOV == minPOV)

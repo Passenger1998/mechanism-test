@@ -57,7 +57,7 @@ float4 frag(v2f i) : SV_Target
     // sample the texture
     float3 spaceshipColor = tex2D(_SpaceShipAlbedo, i.uv);
     //Tint
-    float3 surfaceColor = spaceshipColor * _Color.rgb * (sin(_Time.y * 3) * 0.4 + 0.5) * TAU;
+    float3 surfaceColor = spaceshipColor * _Color.rgb * (sin(_Time.y * 3) * 0.3 + 0.5) * TAU;
     float3 tangentSpaceNormal = UnpackNormal(tex2D(_SpaceShipNormals, i.uv))*0.5+0.5;
     float3x3 mtxTangToWorld = {
         i.tangent.x, i.bitangent.x, i.normal.x,

@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - UI
   - Energy
+  - Teleport
   layers:
   - Default
   - TransparentFX

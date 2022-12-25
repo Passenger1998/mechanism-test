@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Construction Site/Level333.unity
     guid: 86e7dca4f89e58549be9425ec1ac84b8
+  - enabled: 1
+    path: Assets/Scenes/Game Construction Site/Level666.unity
+    guid: b3c3367ba795794449a8360ecc392b08
+  - enabled: 1
+    path: Assets/Scenes/Game Construction Site/Level999.unity
+    guid: 3a0155c4b0ecb9c409f9f90491ea0bc9
+  - enabled: 1
+    path: Assets/Scenes/Game Construction Site/LevelXXX.unity
+    guid: 07544e5601386864c85b7ea57ff208d4
   m_configObjects: {}

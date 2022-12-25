@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SceneManageScript : MonoBehaviour
 {
 
-    static public SceneManageScript Instance;
+    public static SceneManageScript Instance;  
 
     public Animator sceneTransit_Animator;
 
@@ -53,7 +53,6 @@ public class SceneManageScript : MonoBehaviour
     public void OnEnable()
     {
         Instance = this;
-
         StartSceneState_ = SceneLoadState.NotActive;
         
     }
@@ -178,6 +177,8 @@ public class SceneManageScript : MonoBehaviour
         _EndSceneState_();
 
     }
+
+
 
 
 }

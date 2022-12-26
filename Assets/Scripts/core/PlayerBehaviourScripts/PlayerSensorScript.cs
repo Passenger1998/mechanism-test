@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public class PlayerSensorScript : MonoBehaviour
 {
+    [SerializeField] UnityEvent BeingAttacked;
 
     public static event Action BeingTeleported;
-    public static event Action BeingAttacked;
 
 
     // Start is called before the first frame update
@@ -27,13 +28,17 @@ public class PlayerSensorScript : MonoBehaviour
         if(col.CompareTag("Teleport"))
         {
             BeingTeleported?.Invoke();
-            Debug.Log("teleport");
+
+            AllSceneManager._AllSceneManager.isTeleporting_ = true;
+
+            //Debug.Log("teleport");
         }
 
         if (col.CompareTag("Enemy"))
         {
-            BeingAttacked?.Invoke();
-            Debug.Log("teleport");
+            BeingAttacked.Invoke();
+            Debug.Log("attacked");
+
         }
     }
 

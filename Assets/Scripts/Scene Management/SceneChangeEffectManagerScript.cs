@@ -120,6 +120,7 @@ public class SceneChangeEffectManagerScript : MonoBehaviour
                 //Debug.Log("Fade complete");
                 cam.fieldOfView = endValue;
                 
+
                 AllSceneManager._AllSceneManager.ShiftScene(nextSceneName);
 
             }

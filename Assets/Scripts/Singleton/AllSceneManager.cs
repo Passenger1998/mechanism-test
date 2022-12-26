@@ -15,6 +15,11 @@ public class AllSceneManager : MonoBehaviour
     public enum SceneState { Start_, Running_, Finish_, NotActive_ }
     public SceneState _SceneState = SceneState.NotActive_;
 
+    public static event Action TeleportStart;
+    public static event Action TeleportEnd;
+    public bool isTeleporting_ = false;
+
+
     // Start is called before the first frame update
     public void OnEnable()
     {
@@ -28,12 +33,11 @@ public class AllSceneManager : MonoBehaviour
         }
 
        _SceneState = SceneState.NotActive_;
+
+
+
     }
 
-    public void ShiftScene(string scene)
-    {
-        SceneManager.LoadScene(scene);
-    }
 
     public void SceneStateChanger()
     {
@@ -63,6 +67,11 @@ public class AllSceneManager : MonoBehaviour
         
     }
 
+    public void ShiftScene(string nextSceneName)
+    {
+        AllSceneManager._AllSceneManager.isTeleporting_ = false;
+        SceneManager.LoadScene(nextSceneName);
+    }
 
     // Update is called once per frame
     private void Start()
@@ -83,4 +92,5 @@ public class AllSceneManager : MonoBehaviour
         SceneStateChanger();
 
     }
+
 }

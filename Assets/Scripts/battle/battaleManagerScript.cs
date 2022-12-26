@@ -13,6 +13,7 @@ public class battaleManagerScript : MonoBehaviour
     public int player_hp;
     public int player_fuel;
     public int player_bullet;
+    public int player_speed;
 
     /// <summary>
     /// enemy status varaible sat area

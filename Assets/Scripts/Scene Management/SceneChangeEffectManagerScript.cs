@@ -32,13 +32,13 @@ public class SceneChangeEffectManagerScript : MonoBehaviour
     private void OnEnable()
     {
         AllSceneManager.SceneStart += ScenePause;
-        PlayerConditionScript.BeingTeleported += SceneFadeout;
+        PlayerSensorScript.BeingTeleported += SceneFadeout;
     }
 
     private void OnDisable()
     {
         AllSceneManager.SceneStart -= ScenePause;
-        PlayerConditionScript.BeingTeleported -= SceneFadeout;
+        PlayerSensorScript.BeingTeleported -= SceneFadeout;
     }
 
     void ScenePause()

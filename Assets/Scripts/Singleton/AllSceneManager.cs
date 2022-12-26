@@ -16,7 +16,7 @@ public class AllSceneManager : MonoBehaviour
     public SceneState _SceneState = SceneState.NotActive_;
 
     // Start is called before the first frame update
-    private void Awake()
+    public void OnEnable()
     {
         if (_AllSceneManager != null && _AllSceneManager != this)
         {

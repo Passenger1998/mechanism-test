@@ -25,19 +25,19 @@ public class SceneChangeEffectManagerScript : MonoBehaviour
     public Camera cam;
 
     public string nextSceneName;
+
+    bool isSceneFadingOut = false;
     
 
     private void OnEnable()
     {
-        AllSceneManager.SceneNotActive += ScenePause;
-        SceneStart += SceneFadein;
+        AllSceneManager.SceneStart += ScenePause;
         PlayerConditionScript.BeingTeleported += SceneFadeout;
     }
 
     private void OnDisable()
     {
-        AllSceneManager.SceneNotActive -= ScenePause;
-        SceneStart -= SceneFadein;
+        AllSceneManager.SceneStart -= ScenePause;
         PlayerConditionScript.BeingTeleported -= SceneFadeout;
     }
 
@@ -48,7 +48,8 @@ public class SceneChangeEffectManagerScript : MonoBehaviour
         timeAwaits += Time.deltaTime;
         if (timeAwaits >= timeToWait_BeforeStart)
         {
-            AllSceneManager._AllSceneManager._SceneState = AllSceneManager.SceneState.Start_;
+            SceneFadein();
+            AllSceneManager._AllSceneManager._SceneState = AllSceneManager.SceneState.Running_;
         }
     }
 
@@ -61,28 +62,68 @@ public class SceneChangeEffectManagerScript : MonoBehaviour
     void SceneFadeout()
     {
 
+        isSceneFadingOut = true;
 
-        if (timeElapsed < lerpDuration)
-        {
-            valueToLerp = Mathf.Lerp(startValue, endValue, timeElapsed / lerpDuration);
-            timeElapsed += Time.deltaTime;
-            cam.fieldOfView = valueToLerp;
+        //while (timeElapsed < lerpDuration) 
+        //{
+        //    timeElapsed += Time.deltaTime;
+        //}
 
-            //Debug.Log("Fade amount: "+ valueToLerp +" : "+ cam.fieldOfView);
-        }
-        else
-        {
-            //Debug.Log("Fade complete");
-            cam.fieldOfView = endValue;
-            sceneTransit_Animator.Play("fade out");
-            AllSceneManager._AllSceneManager.ShiftScene(nextSceneName);
+        //if (timeElapsed < lerpDuration)
+        //{
+        //    valueToLerp = Mathf.Lerp(startValue, endValue, timeElapsed / lerpDuration);
+        //    //timeElapsed += Time.deltaTime;
+        //    cam.fieldOfView = valueToLerp;
 
-        }
+        //    //Debug.Log("Fade amount: "+ valueToLerp +" : "+ cam.fieldOfView);
+        //}
+
+
+        ////if (timeElapsed < lerpDuration)
+        ////{
+        ////    valueToLerp = Mathf.Lerp(startValue, endValue, timeElapsed / lerpDuration);
+        ////    timeElapsed += Time.deltaTime;
+        ////    cam.fieldOfView = valueToLerp;
+
+        ////    //Debug.Log("Fade amount: "+ valueToLerp +" : "+ cam.fieldOfView);
+        ////}
+        //if  (timeElapsed >= lerpDuration)
+        //{
+        //    //Debug.Log("Fade complete");
+        //    cam.fieldOfView = endValue;
+        //    sceneTransit_Animator.Play("fade out");
+        //    AllSceneManager._AllSceneManager.ShiftScene(nextSceneName);
+
+        //}
     }
 
     private void Start()
     {
         startValue = cam.GetComponent<Camera>().fieldOfView;
+        AllSceneManager._AllSceneManager._SceneState = AllSceneManager.SceneState.Start_;
+    }
+
+    private void Update()
+    {
+        if (isSceneFadingOut)
+        {
+            if (timeElapsed < lerpDuration)
+            {
+                valueToLerp = Mathf.Lerp(startValue, endValue, timeElapsed / lerpDuration);
+                timeElapsed += Time.deltaTime;
+                cam.fieldOfView = valueToLerp;
+                sceneTransit_Animator.Play("fade out");
+
+                //Debug.Log("Fade amount: "+ valueToLerp +" : "+ cam.fieldOfView);
+            } else if (timeElapsed >= lerpDuration)
+            {
+                //Debug.Log("Fade complete");
+                cam.fieldOfView = endValue;
+                
+                AllSceneManager._AllSceneManager.ShiftScene(nextSceneName);
+
+            }
+        }
     }
 
 }

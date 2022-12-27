@@ -14,7 +14,7 @@ public class clickTransportScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Click_and_Transport()
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {

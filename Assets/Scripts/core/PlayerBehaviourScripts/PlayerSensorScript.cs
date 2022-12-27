@@ -21,6 +21,7 @@ public class PlayerSensorScript : MonoBehaviour
     void Update()
     {
         
+
     }
 
     private void OnTriggerEnter(Collider col)

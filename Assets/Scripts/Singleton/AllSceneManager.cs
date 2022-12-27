@@ -35,8 +35,8 @@ public class AllSceneManager : MonoBehaviour
        _SceneState = SceneState.NotActive_;
 
 
-
     }
+
 
 
     public void SceneStateChanger()
@@ -83,7 +83,7 @@ public class AllSceneManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
             //Debug.Log("exit is pressed");

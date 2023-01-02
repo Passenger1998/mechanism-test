@@ -34,9 +34,8 @@ public class PlayerBehaviour_Gen3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        inputX = Input.GetAxis("Horizontal");
-        inputY = Input.GetAxis ("Vertical");
+
+        Moving();
 
         //shoot bullet & bullet count
         if (Input.GetMouseButtonDown(0) && PlayerGlobalCondition._PlayerGlobalCondition.player_bullet > 0)
@@ -65,11 +64,14 @@ public class PlayerBehaviour_Gen3 : MonoBehaviour
 
     void Moving()
     {
-        if (PlayerGlobalCondition._PlayerGlobalCondition.userControlleable)
-        {
-            inputX = Input.GetAxis("Horizontal");
-            inputY = Input.GetAxis("Vertical");
-        }
+        inputX = Input.GetAxis("Horizontal");
+        inputY = Input.GetAxis("Vertical");
+
+        //if (PlayerGlobalCondition._PlayerGlobalCondition.userControlleable)
+        //{
+        //    inputX = Input.GetAxis("Horizontal");
+        //    inputY = Input.GetAxis("Vertical");
+        //}
         
     }
 
@@ -87,7 +89,10 @@ public class PlayerBehaviour_Gen3 : MonoBehaviour
     //    bulletSpawn.GetComponent<Rigidbody>().velocity = new Vector2 (bulletPos.transform.right.x * PlayerGlobalCondition._PlayerGlobalCondition.bullet_speed, bulletPos.transform.right.y * PlayerGlobalCondition._PlayerGlobalCondition.bullet_speed);
     //}
 
-
+    void _Accelearte()
+    {
+        float initialspeed = PlayerGlobalCondition._PlayerGlobalCondition.player_speed;
+    }
 
     void StopMoving()
     {

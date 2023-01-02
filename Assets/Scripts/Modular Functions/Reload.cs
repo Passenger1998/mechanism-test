@@ -16,7 +16,7 @@ public class Reload : MonoBehaviour
             //play sucess sound
 
             PlayerGlobalCondition._PlayerGlobalCondition.player_bullet = PlayerGlobalCondition._PlayerGlobalCondition.player_bullet + 10;
-            PlayerGlobalCondition._PlayerGlobalCondition.player_fuel = PlayerGlobalCondition._PlayerGlobalCondition.player_fuel - 1;
+            PlayerGlobalCondition._PlayerGlobalCondition.player_fuel = PlayerGlobalCondition._PlayerGlobalCondition.player_fuel - 5;
         } else
         {
             //play fail sound

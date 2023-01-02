@@ -12,6 +12,7 @@ TagManager:
   - UI
   - Energy
   - Teleport
+  - MonsterBoxTrigger
   layers:
   - Default
   - TransparentFX

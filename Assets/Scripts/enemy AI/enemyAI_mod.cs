@@ -26,7 +26,7 @@ public class enemyAI_mod : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("Submarine").transform;
+        //player = GameObject.Find("Submarine").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 

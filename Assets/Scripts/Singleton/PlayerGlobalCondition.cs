@@ -12,11 +12,20 @@ public class PlayerGlobalCondition : MonoBehaviour
     public int player_fuel = 10;
     public int player_bullet = 30;
 
-    public float bullet_speed = 100.0f;
+    public float bullet_speed = 50.0f;
 
-    public float player_speed = 50.0f;
+    public float player_speed;
 
-    public bool userControlleable;
+    public float fuelLerpDuration = 5.0f;
+
+    public float initial_speed = 1.0f;
+
+    public float fasterspeedSlowingRate = 0.1f;
+    public float normalspeedSlowingRate = 0.05f;
+
+    public float addonspeed = 0.1f;
+
+    //public bool userControlleable;
 
     public void OnEnable()
     {
@@ -28,6 +37,7 @@ public class PlayerGlobalCondition : MonoBehaviour
         {
             _PlayerGlobalCondition = this;
         }
+
     }
 
     // Start is called before the first frame update
@@ -41,6 +51,14 @@ public class PlayerGlobalCondition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(player_fuel <= 0)
+        {
+            player_fuel = 0;
+        }
+
+        if(player_speed <= 0)
+        {
+            player_speed = 0;
+        }
     }
 }

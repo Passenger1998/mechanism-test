@@ -9,6 +9,7 @@ public class PlayerSensorScript : MonoBehaviour
     [SerializeField] UnityEvent BeingAttacked;
 
     public static event Action BeingTeleported;
+    public static event Action MonsterBoxTriggered;
 
 
     // Start is called before the first frame update
@@ -40,6 +41,16 @@ public class PlayerSensorScript : MonoBehaviour
             BeingAttacked.Invoke();
             Debug.Log("attacked");
 
+        }
+
+        if (col.CompareTag("Energy"))
+        {
+            PlayerGlobalCondition._PlayerGlobalCondition.player_fuel = PlayerGlobalCondition._PlayerGlobalCondition.player_fuel + 10;
+        }
+
+        if (col.CompareTag("MonsterBoxTrigger"))
+        {
+            MonsterBoxTriggered?.Invoke();
         }
     }
 

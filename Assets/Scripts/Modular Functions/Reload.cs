@@ -9,11 +9,14 @@ public class Reload : MonoBehaviour
 
     public void _Reload()
     {
-        Debug.Log("reload");
+        //Debug.Log("reload");
 
         if (PlayerGlobalCondition._PlayerGlobalCondition.player_fuel > 0)
         {
             //play sucess sound
+            AudioClip reloadsound = AudioCentreScript._audioCentreScript.player_sound[3];
+            AudioSource.PlayClipAtPoint(reloadsound, GameObject.FindGameObjectWithTag("MainCamera").transform.position, 100.0f);
+
 
             PlayerGlobalCondition._PlayerGlobalCondition.player_bullet = PlayerGlobalCondition._PlayerGlobalCondition.player_bullet + 10;
             PlayerGlobalCondition._PlayerGlobalCondition.player_fuel = PlayerGlobalCondition._PlayerGlobalCondition.player_fuel - 5;

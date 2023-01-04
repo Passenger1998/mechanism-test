@@ -72,8 +72,11 @@ public class PlayerGlobalCondition : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Q))
             {
+                AudioClip rehealsound = AudioCentreScript._audioCentreScript.player_sound[4];
+                AudioSource.PlayClipAtPoint(rehealsound, GameObject.FindGameObjectWithTag("MainCamera").transform.position, 10.0f);
+
                 player_fuel -= 5;
-                player_hp += 10;
+                player_hp += 5;
             }
         }
     }

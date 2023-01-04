@@ -8052,6 +8052,7 @@ MonoBehaviour:
   nextSceneName: Level666
   deaddisplay: {fileID: 2139940172}
   slaughtercountDisplay: {fileID: 1118872963}
+  _UI: {fileID: 2069558928}
 --- !u!114 &474075108
 MonoBehaviour:
   m_ObjectHideFlags: 0

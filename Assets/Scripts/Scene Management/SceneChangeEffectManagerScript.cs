@@ -37,6 +37,7 @@ public class SceneChangeEffectManagerScript : MonoBehaviour
     public GameObject slaughtercountDisplay;
 
     bool gononwithdeadactions = false;
+    public GameObject _UI;
     
 
     private void OnEnable()
@@ -164,6 +165,7 @@ public class SceneChangeEffectManagerScript : MonoBehaviour
 
     void PlayerDeathScreen()
     {
+        _UI.SetActive(false);
         SceneisjustFadingtoBlack = true;
 
         if (gononwithdeadactions)

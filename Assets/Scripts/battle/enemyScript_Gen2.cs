@@ -8,6 +8,8 @@ public class enemyScript_Gen2 : MonoBehaviour
 {
 
     public int enemy_hp = 10;
+    public GameObject energyclust;
+    bool enemystayinlivearea = true;
 
     void OnTriggerEnter(Collider col)
     {
@@ -16,13 +18,15 @@ public class enemyScript_Gen2 : MonoBehaviour
         {
 
             enemy_hp = enemy_hp - 1;
-            Debug.Log(this.gameObject + " hp is now " + enemy_hp);
+            //Debug.Log(this.gameObject + " hp is now " + enemy_hp);
 
             //StartCoroutine(colourShift(hitColorChangeDuration));
 
 
         }
     }
+
+
 
     void Start()
     {
@@ -35,9 +39,10 @@ public class enemyScript_Gen2 : MonoBehaviour
     {
         if (enemy_hp == 0)
         {
-
+            Instantiate(energyclust, this.gameObject.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-            PlayerGlobalCondition._PlayerGlobalCondition.player_fuel = PlayerGlobalCondition._PlayerGlobalCondition.player_fuel + 10;
+            PlayerGlobalCondition._PlayerGlobalCondition.killcount += 1;
+            PlayerGlobalCondition._PlayerGlobalCondition.player_fuel += 5;
 
         }
     }

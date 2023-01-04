@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class PlayerGlobalCondition : MonoBehaviour
 
 
     public static PlayerGlobalCondition _PlayerGlobalCondition;
+    public static event Action PlayerisDead;
 
     public int player_hp = 10;
     public int player_fuel = 10;
@@ -14,16 +16,11 @@ public class PlayerGlobalCondition : MonoBehaviour
 
     public float bullet_speed = 50.0f;
 
-    public float player_speed;
+    public float player_speed = 0.1f;
 
     public float fuelLerpDuration = 5.0f;
 
-    public float initial_speed = 1.0f;
-
-    public float fasterspeedSlowingRate = 0.1f;
-    public float normalspeedSlowingRate = 0.05f;
-
-    public float addonspeed = 0.1f;
+    public int killcount = 0;
 
     //public bool userControlleable;
 
@@ -37,6 +34,7 @@ public class PlayerGlobalCondition : MonoBehaviour
         {
             _PlayerGlobalCondition = this;
         }
+
 
     }
 
@@ -60,5 +58,25 @@ public class PlayerGlobalCondition : MonoBehaviour
         {
             player_speed = 0;
         }
+
+        if(player_hp <= 0)
+        {
+            player_hp = 0;
+            PlayerisDead?.Invoke();
+        }
     }
+
+    public void addhp()
+    {
+        if(player_fuel > 0)
+        {
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                player_fuel -= 5;
+                player_hp += 10;
+            }
+        }
+    }
+
+
 }

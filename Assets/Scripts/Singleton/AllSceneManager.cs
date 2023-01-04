@@ -19,6 +19,8 @@ public class AllSceneManager : MonoBehaviour
     public static event Action TeleportEnd;
     public bool isTeleporting_ = false;
 
+    string currentScene;
+
 
     // Start is called before the first frame update
     public void OnEnable()
@@ -71,6 +73,12 @@ public class AllSceneManager : MonoBehaviour
     {
         AllSceneManager._AllSceneManager.isTeleporting_ = false;
         SceneManager.LoadScene(nextSceneName);
+    }
+
+    public void RespawntoCurrentScene()
+    {
+        currentScene = SceneManager.GetActiveScene().name;
+        ShiftScene(currentScene);
     }
 
     // Update is called once per frame

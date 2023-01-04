@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 public class PlayerBehaviour_Gen3 : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class PlayerBehaviour_Gen3 : MonoBehaviour
     {
 
         Moving();
+        PlayerGlobalCondition._PlayerGlobalCondition.addhp();
 
         //shoot bullet & bullet count
         if (Input.GetMouseButtonDown(0) && PlayerGlobalCondition._PlayerGlobalCondition.player_bullet > 0)
@@ -66,21 +68,21 @@ public class PlayerBehaviour_Gen3 : MonoBehaviour
     {
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
-
+        rb.velocity = new Vector3(inputX * PlayerGlobalCondition._PlayerGlobalCondition.player_speed, inputY * PlayerGlobalCondition._PlayerGlobalCondition.player_speed, 0);
         //if (PlayerGlobalCondition._PlayerGlobalCondition.userControlleable)
         //{
         //    inputX = Input.GetAxis("Horizontal");
         //    inputY = Input.GetAxis("Vertical");
         //}
-        
-    }
-
-    void FixedUpdate()
-    {
-        //movement control
-        rb.velocity = new Vector3 (inputX * PlayerGlobalCondition._PlayerGlobalCondition.player_speed, inputY * PlayerGlobalCondition._PlayerGlobalCondition.player_speed, 0);
 
     }
+
+    //void FixedUpdate()
+    //{
+    //    //movement control
+    //    rb.velocity = new Vector3 (inputX * PlayerGlobalCondition._PlayerGlobalCondition.player_speed, inputY * PlayerGlobalCondition._PlayerGlobalCondition.player_speed, 0);
+
+    //}
 
     //void Shoot()
     //{
@@ -89,10 +91,6 @@ public class PlayerBehaviour_Gen3 : MonoBehaviour
     //    bulletSpawn.GetComponent<Rigidbody>().velocity = new Vector2 (bulletPos.transform.right.x * PlayerGlobalCondition._PlayerGlobalCondition.bullet_speed, bulletPos.transform.right.y * PlayerGlobalCondition._PlayerGlobalCondition.bullet_speed);
     //}
 
-    void _Accelearte()
-    {
-        float initialspeed = PlayerGlobalCondition._PlayerGlobalCondition.player_speed;
-    }
 
     void StopMoving()
     {

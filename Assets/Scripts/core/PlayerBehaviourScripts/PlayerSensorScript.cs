@@ -38,6 +38,7 @@ public class PlayerSensorScript : MonoBehaviour
 
         if (col.CompareTag("Enemy"))
         {
+            PlayerGlobalCondition._PlayerGlobalCondition.player_hp -= 1;
             BeingAttacked.Invoke();
             Debug.Log("attacked");
 

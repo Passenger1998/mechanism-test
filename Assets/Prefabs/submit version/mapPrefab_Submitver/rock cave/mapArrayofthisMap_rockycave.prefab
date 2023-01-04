@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2984174413175571046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2984174413175571045}
+  - component: {fileID: 2984174413175571044}
+  m_Layer: 0
+  m_Name: mapArrayofthisMap_rockycave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2984174413175571045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2984174413175571046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2984174413175571044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2984174413175571046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b2c3d7917f041342a68b9733cde8193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockPrefabArray:
+  - {fileID: 2864546155310834530, guid: e546792ad208e7b4487b0858b0bd45fe, type: 3}
+  - {fileID: 4019177628708106989, guid: bcad11c19282252408c0a9db9020e3bf, type: 3}
+  - {fileID: 1966731522792486212, guid: bf5c2c9913ecef3428b39e9c08541352, type: 3}
+  - {fileID: 2947759917313442805, guid: ecb4f238dfd7ae54da20a794f91f83f8, type: 3}
+  - {fileID: 4274127961900073634, guid: 8d4c9334439e4a043b63dbceda7d3d2a, type: 3}

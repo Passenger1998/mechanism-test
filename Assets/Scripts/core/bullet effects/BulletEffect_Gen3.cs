@@ -6,7 +6,7 @@ using UnityEngine;
 public class BulletEffect_Gen3 : MonoBehaviour
 {
 
-
+    public GameObject explosion;
     void OnTriggerEnter(Collider col)
     {
 
@@ -37,7 +37,9 @@ public class BulletEffect_Gen3 : MonoBehaviour
 
             //ChangeColor();
 
-            Destroy(gameObject);
+
+            Destroy(this.gameObject);
+            Instantiate(explosion, this.gameObject.transform.position, Quaternion.identity);
 
 
         } 
@@ -66,6 +68,7 @@ public class BulletEffect_Gen3 : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, 5f);
+        
     }
 
     // Update is called once per frame

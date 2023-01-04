@@ -20,7 +20,7 @@ public class PlayerSensorScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Warnings();
 
@@ -36,31 +36,35 @@ public class PlayerSensorScript : MonoBehaviour
         {
             audiosource.mute = false;
             //float timeBetweenShots = 15.0f;
-            audiosource.PlayOneShot(mildwarning, 1.0f);
+
+            //audiosource.PlayOneShot(mildwarning, 1.0f);
 
             float timer = 0.0f;
             timer += Time.deltaTime;
 
-            if (timer > 15.0f)
+            if (timer < 15.0f)
             {
-                audiosource.PlayOneShot(mildwarning, 1.0f);
+                audiosource.PlayOneShot(mildwarning, 0.25f);
                 timer = 0.0f;
             }
         } else if (PlayerGlobalCondition._PlayerGlobalCondition.player_hp <= 2 && PlayerGlobalCondition._PlayerGlobalCondition.player_hp > 0)
         {
             audiosource.mute = false;
             //float timeBetweenShots = 32.0f;
-            audiosource.PlayOneShot(serioiuswarning, 1.0f);
+            //audiosource.PlayOneShot(serioiuswarning, 1.0f);
 
             float timer = 0.0f;
             timer += Time.deltaTime;
 
             if (timer > 32.0f)
             {
-                audiosource.PlayOneShot(serioiuswarning, 1.0f);
+                audiosource.PlayOneShot(serioiuswarning, 0.25f);
                 timer = 0.0f;
             }
-        } else if (PlayerGlobalCondition._PlayerGlobalCondition.player_hp > 5)
+
+
+        }
+        else if (PlayerGlobalCondition._PlayerGlobalCondition.player_hp > 5)
         {
             audiosource.mute = true;
         }

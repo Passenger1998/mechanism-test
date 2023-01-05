@@ -16,8 +16,8 @@ public class enemyScript_Gen2 : MonoBehaviour
 
         if (col.gameObject.tag == "Bullet")
         {
-            AudioClip monster_hurt = AudioCentreScript._audioCentreScript.monster_sound[0];
-            AudioSource.PlayClipAtPoint(monster_hurt, this.gameObject.transform.position, 100.0f);
+            //AudioClip monster_hurt = AudioCentreScript._audioCentreScript.monster_sound[0];
+            //AudioSource.PlayClipAtPoint(monster_hurt, this.gameObject.transform.position, 100.0f);
 
             enemy_hp = enemy_hp - 1;
             //Debug.Log(this.gameObject + " hp is now " + enemy_hp);

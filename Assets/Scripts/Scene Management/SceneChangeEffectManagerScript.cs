@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static AllSceneManager;
-using static UnityEditor.Recorder.OutputPath;
+//using static UnityEditor.Recorder.OutputPath;
 
 
 public class SceneChangeEffectManagerScript : MonoBehaviour

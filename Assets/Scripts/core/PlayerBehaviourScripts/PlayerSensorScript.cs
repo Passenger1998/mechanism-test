@@ -13,10 +13,16 @@ public class PlayerSensorScript : MonoBehaviour
 
     public AudioSource audiosource;
 
+    public GameObject attackcollision_particle;
+
+    bool mildwarning_emit = false;
+    bool seriouswarning_emit = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        mildwarning_emit = false;
+        seriouswarning_emit = false;
     }
 
     // Update is called once per frame
@@ -32,40 +38,49 @@ public class PlayerSensorScript : MonoBehaviour
         AudioClip serioiuswarning = AudioCentreScript._audioCentreScript.player_sound[1];
 
 
-        if (PlayerGlobalCondition._PlayerGlobalCondition.player_hp <= 5 && PlayerGlobalCondition._PlayerGlobalCondition.player_hp > 0)
+        if (PlayerGlobalCondition._PlayerGlobalCondition.player_hp <= 5 && PlayerGlobalCondition._PlayerGlobalCondition.player_hp > 0 && !mildwarning_emit)
         {
+            mildwarning_emit = true;
             audiosource.mute = false;
+            AudioSource.PlayClipAtPoint(mildwarning, this.gameObject.transform.position, 1.0f);
+
             //float timeBetweenShots = 15.0f;
 
             //audiosource.PlayOneShot(mildwarning, 1.0f);
 
-            float timer = 0.0f;
-            timer += Time.deltaTime;
+            //float timer = 0.0f;
+            //timer += Time.deltaTime;
 
-            if (timer < 15.0f)
-            {
-                audiosource.PlayOneShot(mildwarning, 0.25f);
-                timer = 0.0f;
-            }
-        } else if (PlayerGlobalCondition._PlayerGlobalCondition.player_hp <= 2 && PlayerGlobalCondition._PlayerGlobalCondition.player_hp > 0)
+            //if (timer < 15.0f)
+            //{
+            //    audiosource.PlayOneShot(mildwarning, 0.25f);
+            //    timer = 0.0f;
+            //}
+            
+        } else if (PlayerGlobalCondition._PlayerGlobalCondition.player_hp <= 2 && PlayerGlobalCondition._PlayerGlobalCondition.player_hp > 0 && !seriouswarning_emit)
         {
+            seriouswarning_emit = true;
             audiosource.mute = false;
+            AudioSource.PlayClipAtPoint(serioiuswarning, this.gameObject.transform.position, 1.0f);
             //float timeBetweenShots = 32.0f;
             //audiosource.PlayOneShot(serioiuswarning, 1.0f);
 
-            float timer = 0.0f;
-            timer += Time.deltaTime;
+            //float timer = 0.0f;
+            //timer += Time.deltaTime;
 
-            if (timer > 32.0f)
-            {
-                audiosource.PlayOneShot(serioiuswarning, 0.25f);
-                timer = 0.0f;
-            }
+            //if (timer > 32.0f)
+            //{
+            //    audiosource.PlayOneShot(serioiuswarning, 0.25f);
+            //    timer = 0.0f;
+            //}
+
 
 
         }
         else if (PlayerGlobalCondition._PlayerGlobalCondition.player_hp > 5)
         {
+            mildwarning_emit = false;
+            seriouswarning_emit = false;
             audiosource.mute = true;
         }
     }
@@ -83,6 +98,7 @@ public class PlayerSensorScript : MonoBehaviour
 
         if (col.CompareTag("Enemy"))
         {
+            Instantiate(attackcollision_particle, this.gameObject.transform.position, Quaternion.identity);
             PlayerGlobalCondition._PlayerGlobalCondition.player_hp -= 1;
             BeingAttacked.Invoke();
             Debug.Log("attacked");
